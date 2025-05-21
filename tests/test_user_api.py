@@ -55,6 +55,6 @@ def test_login():
             "password": "cityslicka"
     }
     response = requests.post(f"{BASE_URL}/login",headers=HEADERS,json=payload)
-    assert response.status_code==201
+    assert response.status_code==200
     result = json.dumps(response.json()["token"])
     print(result)
