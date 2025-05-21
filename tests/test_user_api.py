@@ -42,3 +42,19 @@ def test_update_user():
     assert response.json()["name"]=="Prashant"
     result = json.dumps(response.json()["name"])
     print(result)
+
+def test_delete_user():
+    response = requests.delete(f"{BASE_URL}/users/2",headers=HEADERS)
+    assert response.status_code==204
+
+
+def test_login():
+    payload = {
+
+            "email": "eve.holt@reqres.in",
+            "password": "cityslicka"
+    }
+    response = requests.post(f"{BASE_URL}/login",headers=HEADERS,json=payload)
+    assert response.status_code==200
+    result = json.dumps(response.json()["token"])
+    print(result)
