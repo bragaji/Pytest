@@ -16,7 +16,7 @@ def test_get_users():
     print(result)
 
 def test_single_user():
-    response =  requests.get(f"{BASE_URL}/users/2")
+    response =  requests.get(f"{BASE_URL}/users/2",headers=HEADERS)
     assert response.status_code ==200
     assert response.json()["data"]["first_name"]=="Janet"
     result = json.dumps(response.json(),indent=4)
