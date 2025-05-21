@@ -1,5 +1,6 @@
 import json
 
+import allure
 import requests
 import pytest
 
@@ -15,6 +16,7 @@ def test_get_users():
     result = json.dumps(response.json(), indent=4)
     print(result)
 
+@allure.severity(allure.severity_level.NORMAL)
 def test_single_user():
     response =  requests.get(f"{BASE_URL}/users/2",headers=HEADERS)
     assert response.status_code ==200

@@ -1,5 +1,6 @@
-pytest
-requests
+pytest~=8.3.5
+requests~=2.32.3
 pytest-html
 jsonschema
 allure-pytest
+allure-python-commons~=2.14.2
